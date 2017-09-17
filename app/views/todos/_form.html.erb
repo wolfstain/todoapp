@@ -1,0 +1,26 @@
+<% if @todo.errors.any? %>
+  <h2>Los siguientes errores han prevenido al todo de guardarse</h2>
+  <ul>
+    <% @todo.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li> 
+    <%end %>
+  </ul>
+<%end %>
+
+<%= form_for @todo do  |f| %>
+  <p>
+  <%= f.label :nombre %>
+  <%= f.text_field :nombre %>
+  </p>
+  
+  <p>
+  <%= f.label :descripción %>  <br>
+  <%= f.text_area :descripcion %>   
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to "volver a la lista de todos", todos_path %>

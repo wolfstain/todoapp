@@ -15,6 +15,7 @@
     <td><%= todo.descripcion%></td>
     <td><%=link_to "editar", edit_todo_path(todo)%></td>
     <td><%=link_to "mostrar", todo_path(todo)%></td>
+    <td><%=link_to "destruir", todo_path(todo), method: :delete, data: {confirm: "¿Estás seguro?"}%></td>
   </tr>
   <% end %>
 </table>
